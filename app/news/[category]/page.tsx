@@ -6,6 +6,16 @@ type Props = {
   params: { category: Category };
 };
 
+export async function generateStaticProps() {
+  return categories.map((category) => ({
+    props: {
+      params: {
+        category,
+      },
+    },
+  }));
+}
+
 export default async function NewsCategory({ params: { category } }: Props) {
   const news: NewsResponse = await fetchNews(category);
   return (
@@ -14,10 +24,4 @@ export default async function NewsCategory({ params: { category } }: Props) {
       <NewsList news={news} />
     </div>
   );
-}
-
-export async function generateStaticProps() {
-  return categories.map((category) => ({
-    category: category,
-  }));
 }
