@@ -1,7 +1,7 @@
 import { categories } from "@/constants";
 import { fetchNews } from "@/utils/fetchNews";
 import NewsList from "./NewsList";
-import response from "../../response.json"
+import response from "../response.json"
 
 export default async function Homepage() {
   //Fetch news data
