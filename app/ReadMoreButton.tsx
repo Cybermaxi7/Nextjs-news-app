@@ -2,6 +2,7 @@
 
 import { useRouter } from "next/navigation";
 
+
 type Props = {
   article: Article;
 };
